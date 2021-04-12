@@ -125,5 +125,10 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
+
+# Custom
+assignment_1_advanced.pdf
+dataset_mood_smartphone.csv
+
 # Pyre type checker
 .pyre/
