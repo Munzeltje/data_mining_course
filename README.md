@@ -1,1 +1,3 @@
-# uva_data_mining_course
+# UvA Data Mining Course
+
+Obtain the data from the canvas page and add to the folder.
