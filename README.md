@@ -1,3 +1,3 @@
 # UvA Data Mining Course
 
-Obtain the data from the canvas page and add to the folder.
+Obtain the data for assignment 1 from the canvas page and add to /assignment1.
