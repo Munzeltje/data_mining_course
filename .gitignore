@@ -132,5 +132,4 @@ dmypy.json
 
 # Custom
 assignment_1_advanced.pdf
-dataset_mood_smartphone.csv
-dataset_mood_smartphone_clean.csv
+data/
