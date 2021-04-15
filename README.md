@@ -1,4 +1,4 @@
-# UvA Data Mining Course
+# VU Data Mining Course
 
 ### Requirements
 
@@ -7,5 +7,8 @@ Obtain the data for assignment 1 from the canvas page and add to /assignment1/da
 python packages:
 
 <ul>
+  <li> numpy </li>
   <li> pandas </li>
+  <li> scikit-learn </li>
+  <li> pytorch </li>
 </ul>
