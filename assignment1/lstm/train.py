@@ -17,41 +17,6 @@ from sklearn.metrics import classification_report
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-def penalty_loss(classifications):
-    classifications = torch.argmax(classifications, dim=2)
-    classifications = classifications.detach().cpu().numpy()
-    for j, batch in enumerate(classifications):
-        seen = 2
-        for i, item in enumerate(batch):
-            newly_seen = item
-            if newly_seen == seen == 1:
-                classifications[j,i] = 2
-            elif newly_seen == seen == 0:
-                classifications[j,i] = 2
-            elif newly_seen == seen == 2:
-                continue
-
-            if newly_seen == 1 and seen == 0:
-                seen = 1
-                continue
-            elif newly_seen == 0 and seen == 1:
-                seen = 0
-                continue
-
-            if newly_seen == 2 and seen == 1:
-                continue
-            elif newly_seen == 2 and seen == 0:
-                continue
-
-            if seen == 2 and newly_seen == 1:
-                seen = 1
-            elif seen == 2 and newly_seen == 0:
-                seen = 0
-
-            elif seen == 2 == newly_seen:
-                continue
-    return torch.tensor(classifications).to(device).long()
-
 def train(model, training_loader, validation_loader, val_data, config, model_name="Crypto_ETH"):
     model.train()
     #optimizer = optim.Adam(model.parameters(), lr=config.lr)
