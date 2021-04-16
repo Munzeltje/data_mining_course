@@ -11,4 +11,5 @@ python packages:
   <li> pandas </li>
   <li> scikit-learn </li>
   <li> pytorch </li>
+  <li> matplotlib </li>
 </ul>
