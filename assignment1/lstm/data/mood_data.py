@@ -26,6 +26,12 @@ class MoodLoader(Dataset):
         self.numpy_data = self.data.drop(['id', 'date'], axis=1)
         self.numpy_data = np.array(self.numpy_data)[:,:config.input_dim]
 
+        self.label_data = np.around(self.numpy_data[:,0])
+        print(self.label_data)
+        print(np.bincount(self.label_data.astype(np.int64)))
+        raise ValueError()
+
+
         self.users = self.data['id'].unique()
         self.len = len(self.data)
         self.predict = predict
