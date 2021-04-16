@@ -7,19 +7,15 @@ def get_mood_data(config):
     """
 
     data_path = config.data_path
-    label_path = config.label_path
 
     val_data_path = config.val_data_path
-    val_label_path = config.val_label_path
 
-    train_data = MoodLoader(data_path=data_path,
-                          label_path=label_path,
+    train_data = MoodLoader(data_path=data_path, config=config,
                           sequence_length=config.sequence_length
                          )
 
-    val_data = MoodLoader(data_path=val_data_path,
-                          label_path=val_label_path,
-                          sequence_length=config.sequence_length
+    val_data = MoodLoader(data_path=val_data_path, config=config,
+                          sequence_length=config.sequence_length, predict=True
                          )
 
     return train_data, val_data

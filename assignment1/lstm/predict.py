@@ -17,12 +17,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def predict(model, validation_loader, validation_data, config, filename):
     model.eval()
 
-    if config.prediction_type=="deterministic":
-        accuracy = validate_paragraphs(model, validation_data, validation_loader, subset=False, config=config)
-        print("Validation Accuracy: {}".format(accuracy))
-    else:
-        accuracy = validate_uncertainty(model, validation_data, validation_loader, config=config)
-        print("Validation Accuracy: {}".format(accuracy))
 
     print("Iterators Done")
 
@@ -31,7 +25,7 @@ def main():
     config = LSTM_config()
 
     model = Model(config.input_dim, config.embedding_dim,
-                  config.hidden_dim, config.num_layers, bidirectional=False)
+                  config.hidden_dim)
 
     # Load Data
     if config.input == 'bytes':
