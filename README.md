@@ -12,4 +12,5 @@ python packages:
   <li> scikit-learn </li>
   <li> pytorch </li>
   <li> matplotlib </li>
+  <li> pandas-profiling </li>
 </ul>
