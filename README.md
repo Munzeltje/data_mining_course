@@ -1,4 +1,4 @@
-# VU Data Mining Course
+# Data Mining
 
 ### Requirements
 
